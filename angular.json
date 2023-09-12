@@ -29,8 +29,7 @@
             "styles": [
              
               "src/lib/animate/animate.min.css",
-              "node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
-              "node_modules/owl.carousel/dist/assets/owl.theme.default.min.css",
+              "src/lib/owlcarousel/assets/owl.carousel.min.css",
               "src/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css",
               "src/assets/css/bootstrap.min.css",
               "src/styles.css"
@@ -42,6 +41,7 @@
                 "src/lib/easing/easing.min.js",
                 "src/lib/waypoints/waypoints.min.js",
                 "src/lib/counterup/counterup.min.js",
+                "src/lib/owlcarousel/owl.carousel.min.js",
                 "node_modules/owl.carousel/dist/owl.carousel.min.js",
 
                 "src/lib/tempusdominus/js/moment.min.js",
@@ -110,8 +110,7 @@
             "styles": [
              
             "src/lib/animate/animate.min.css",
-            "node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
-            "node_modules/owl.carousel/dist/assets/owl.theme.default.min.css",
+            "src/lib/owlcarousel/assets/owl.carousel.min.css",
             "src/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css",
             "src/assets/css/bootstrap.min.css",
             "src/styles.css"

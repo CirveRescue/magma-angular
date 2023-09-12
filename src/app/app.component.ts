@@ -37,11 +37,10 @@ export class AppComponent implements AfterViewInit{
 
   }
   ngAfterViewInit() {
-    jQuery('.owl-carousel').owlCarousel({
+    jQuery('#owl-carousel2').owlCarousel({
       items: 1, // Número de elementos a mostrar
       loop: true, // Repetir el carrusel de forma infinita
       nav: true, // Mostrar las flechas de navegación
-      dots: true, // Mostrar los puntos de paginación
       autoplay: true, // Activar la reproducción automática
       autoplayTimeout: 5000, // Duración de cada diapositiva en milisegundos
       responsive: {
@@ -53,6 +52,41 @@ export class AppComponent implements AfterViewInit{
         },
         992: {
           items: 1 // Número de elementos a mostrar en pantalla grande
+        }
+      }
+    });
+    jQuery('#owl-carousel').owlCarousel({
+      items: 3, // Número de elementos a mostrar
+      loop: true, // Repetir el carrusel de forma infinita
+      autoplay: true, // Activar la reproducción automática
+      autoplayTimeout: 5000, // Duración de cada diapositiva en milisegundos
+      responsive: {
+        0: {
+          items: 1 // Número de elementos a mostrar en pantalla pequeña
+        },
+        768: {
+          items: 1 // Número de elementos a mostrar en pantalla mediana
+        },
+        992: {
+          items: 3 // Número de elementos a mostrar en pantalla grande
+        }
+      }
+    });
+    jQuery('#owl-carousel1').owlCarousel({
+      items: 3, // Número de elementos a mostrar
+      loop: true, // Repetir el carrusel de forma infinita
+      nav: true, // Mostrar las flechas de navegación
+      autoplay: true, // Activar la reproducción automática
+      autoplayTimeout: 5000, // Duración de cada diapositiva en milisegundos
+      responsive: {
+        0: {
+          items: 1 // Número de elementos a mostrar en pantalla pequeña
+        },
+        768: {
+          items: 1 // Número de elementos a mostrar en pantalla mediana
+        },
+        992: {
+          items: 3 // Número de elementos a mostrar en pantalla grande
         }
       }
     });
