@@ -62,33 +62,32 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid nav-bar bg-light">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white p-3 py-lg-0 px-lg-4">
-            <a href="" class="navbar-brand d-flex align-items-center m-0 p-0 d-lg-none">
-                <h1 class="text-primary m-0">MAGMA</h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav me-auto">
-                    <a href="index.html" class="nav-item nav-link active">Inicio</a>
-                    <a href="#acercade" class="nav-item nav-link">Acerca de</a>
-                    <a href="#servicio" class="nav-item nav-link">Servicios</a>
-                    <a href="#contacto" class="nav-item nav-link">Contacto</a>
-                </div>
-                <div class="mt-4 mt-lg-0 me-lg-n4 py-3 px-4 bg-primary d-flex align-items-center">
-                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 45px; height: 45px;">
-                        <i class="fa fa-phone-alt text-primary"></i>
-                    </div>
-                    <div class="ms-3">
-                        <p class="mb-1 text-white">Lun - vie 9:00-19:00</p>
-                        <h5 class="m-0 text-secondary">33 3646 3356</h5>
-                    </div>
-                </div>
-            </div>
-        </nav>
+
+<div class="nav-bar">
+  <div class="menu-toggle" (click)="toggleMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+  <ul class="menu" [ngClass]="{ 'open': isMenuOpen }">
+    <li><a href="index.html" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px;">Inicio</a></li>
+    <li><a href="#acercade"  style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px;">Acerca de</a></li>
+    <li><a href="#servicio"  style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px;">Servicios</a></li>
+    <li><a href="#contacto"  style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px;">Contacto</a></li>
+  </ul>
+  <div class="ocultar">
+  <div class="mt-4 mt-lg-0 me-lg-n4 py-3 px-4 bg-primary d-flex align-items-center">
+    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 45px; height: 45px;">
+      <i class="fa fa-phone-alt text-primary"></i>
     </div>
+    <div class="ms-3">
+      <p class="mb-1 text-white">Lun - vie 9:00-19:00</p>
+      <h5 class="m-0 text-secondary">33 3646 3356</h5>
+    </div>
+  </div>
+</div>
+</div>
+
     <!-- Navbar End -->
 
 
@@ -127,7 +126,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 </div>
 <!-- Carousel End -->
@@ -138,7 +137,7 @@
     <div class="container-xxl py-5">
         <div class="container">
             <img src="../assets/img/timeline.png" width="100%" alt="magmatimeline">
- 
+
         </div>
     </div>
     <div class="container-xxl py-5">
@@ -276,19 +275,23 @@
                 <div class="col-lg-8">
                     <div class="bg-light text-center p-5">
                         <h1 class="mb-4">Contactanos</h1>
-                        <form>
+                        <form (ngSubmit)="onSubmit()" name="contact" id="contact" [formGroup]="datosFacturacion">
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Nombre" style="height: 55px;">
+                                    <input name="name" type="text" class="form-control border-0" id="nombre" placeholder="Tu nombre..." [(ngModel)]="datosFacturacion.nombre" formControlName="nombre" required>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control border-0" placeholder="Email" style="height: 55px;">
+                                    <input name="email" type="email" class="form-control border-0" id="email" placeholder="Tu email..." [(ngModel)]="datosFacturacion.email" formControlName="email" required>
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control border-0" placeholder="Mensaje"></textarea>
+                                    <textarea name="message" rows="6" class="form-control border-0" id="consulta" placeholder="Tu mensaje..." [(ngModel)]="datosFacturacion.message" formControlName="message" required></textarea>
                                 </div>
+                                <ngx-recaptcha2
+                                [siteKey]="'6LdBkKwnAAAAAO1glbTHQ7LrJK4I93lnz_31oYnc'"
+                                (success)="onHcaptchaSubmit($event)"></ngx-recaptcha2>
+
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Enviar</button>
+                                    <input type="submit" id="form-submit" class="btn" name="enviar" value="Enviar" [disabled]="!captchaResuelto"(click)="contactoFormSubmitted = true">
                                 </div>
                             </div>
                         </form>
@@ -316,7 +319,7 @@
                     <h5 class="mb-1">Sesajal</h5>
                 </div>
                 <div class="testimonial-item text-center">
-                    
+
                     <img class="bg-light rounded-circle p-2 mx-auto mb-2" src="../assets/img/testimonial-2.png" style="width: 100px; height: 100px;">
                     <div class="mb-2">
                         <small class="fa fa-star text-secondary"></small>
@@ -328,7 +331,7 @@
                     <h5 class="mb-1">Gob. Sanjuan de los lagos</h5>
                 </div>
                 <div class="testimonial-item text-center">
-                    
+
                     <img class="bg-light rounded-circle p-2 mx-auto mb-2" src="../assets/img/testimonial-3.png" style="width: 100px; height: 100px;">
                     <div class="mb-2">
                         <small class="fa fa-star text-secondary"></small>
@@ -340,7 +343,7 @@
                     <h5 class="mb-1">Grupo Polesa</h5>
                 </div>
                 <div class="testimonial-item text-center">
-                    
+
                     <img class="bg-light rounded-circle p-2 mx-auto mb-2" src="../assets/img/testimonial-4.png" style="width: 100px; height: 100px;">
                     <div class="mb-2">
                         <small class="fa fa-star text-secondary"></small>
@@ -352,7 +355,7 @@
                     <h5 class="mb-1">FORLIGHTING</h5>
                 </div>
                 <div class="testimonial-item text-center">
-                    
+
                     <img class="bg-light rounded-circle p-2 mx-auto mb-2" src="../assets/img/testimonial-5.png" style="width: 100px; height: 100px;">
                     <div class="mb-2">
                         <small class="fa fa-star text-secondary"></small>
@@ -364,7 +367,7 @@
                     <h5 class="mb-1">ENVASES</h5>
                 </div>
                 <div class="testimonial-item text-center">
-                    
+
                     <img class="bg-light rounded-circle p-2 mx-auto mb-2" src="../assets/img/testimonial-6.png" style="width: 100px; height: 100px;">
                     <div class="mb-2">
                         <small class="fa fa-star text-secondary"></small>
@@ -376,7 +379,7 @@
                     <h5 class="mb-1">PRODEMEX</h5>
                 </div>
                 <div class="testimonial-item text-center">
-                    
+
                     <img class="bg-light rounded-circle p-2 mx-auto mb-2" src="../assets/img/testimonial-7.png" style="width: 100px; height: 100px;">
                     <div class="mb-2">
                         <small class="fa fa-star text-secondary"></small>
@@ -387,7 +390,7 @@
                     </div>
                     <h5 class="mb-1">PISA Farmaceutica</h5>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -435,8 +438,8 @@
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Desarrollo by <a class="border-bottom" href="https://agaveintellect.com">Agave Intellect</a> 
-                        Diseño by <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> 
+                        Desarrollo by <a class="border-bottom" href="https://agaveintellect.com">Agave Intellect</a>
+                        Diseño by <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
                     </div>
                 </div>
             </div>

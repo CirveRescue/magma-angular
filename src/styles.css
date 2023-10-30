@@ -183,7 +183,7 @@
         position: relative;
         min-height: 500px;
     }
-    
+
     .header-carousel .owl-carousel-item img {
         position: absolute;
         width: 100%;
@@ -585,4 +585,94 @@
 .footer .copyright a {
     color: var(--light);
 }
+
+.nav-bar {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  font-family: 'Helvetica Neue', sans-serif; /* Utiliza la fuente de Bootstrap o la que desees */
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 3px 0;
+  transition: 0.4s;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s; /* Agrega transición de color al enlace */
+}
+
+/* Cambio de color al pasar el ratón por las letras */
+.menu a:hover {
+  color: #007bff; /* Azul clarito */
+}
+
+/* Estilos para el menú de hamburguesa en pantallas pequeñas */
+@media (max-width: 991px) {
+  .ocultar {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+    right: 0;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    width: 200px;
+    height: 220px;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  /* Ajusta el espaciado vertical en los elementos del menú */
+  .menu li {
+    margin-bottom: 30px; /* Espacio entre elementos del menú */
+  }
+
+  /* Ajusta el espaciado vertical en el texto de los enlaces */
+  .menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+    line-height: 30px; /* Espacio entre líneas de texto */
+    padding: 5px 0; /* Padding superior e inferior */
+  }
+}
+
+
 

@@ -24,16 +24,17 @@
               "src/favicon.ico",
               "src/assets"
 
-            
+
             ],
             "styles": [
-             
+
               "src/lib/animate/animate.min.css",
               "src/lib/owlcarousel/assets/owl.carousel.min.css",
               "src/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css",
               "src/assets/css/bootstrap.min.css",
-              "src/styles.css"
-  
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+
               ],
               "scripts": [
                 "node_modules/jquery/dist/jquery.min.js",
@@ -46,7 +47,7 @@
 
                 "src/lib/tempusdominus/js/moment.min.js",
                 "src/lib/tempusdominus/js/moment-timezone.min.js",
-                "src/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js", 
+                "src/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js",
                 "src/js/main.js"
               ]
           },
@@ -108,12 +109,13 @@
               "src/assets"
             ],
             "styles": [
-             
+
             "src/lib/animate/animate.min.css",
             "src/lib/owlcarousel/assets/owl.carousel.min.css",
             "src/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css",
             "src/assets/css/bootstrap.min.css",
-            "src/styles.css"
+            "src/styles.css",
+            "node_modules/bootstrap/dist/css/bootstrap.min.css"
 
             ],
             "scripts": [
@@ -126,7 +128,7 @@
 
               "src/lib/tempusdominus/js/moment.min.js",
               "src/lib/tempusdominus/js/moment-timezone.min.js",
-              "src/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js", 
+              "src/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js",
               "src/js/main.js"
             ]
           }

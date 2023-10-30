@@ -23,6 +23,13 @@ export class AppComponent implements AfterViewInit{
     message: false,
   };
 
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+    console.log("si prende esta madre we")
+  }
+
   @ViewChild('contacto', { static: true }) contactoForm!: NgForm;
 
   constructor(private facturaService: FacturacionServiceService, private _showservice: ShowErrorService, private _fb: FormBuilder, private router: Router,) {}
@@ -41,6 +48,7 @@ export class AppComponent implements AfterViewInit{
       items: 1, // Número de elementos a mostrar
       loop: true, // Repetir el carrusel de forma infinita
       nav: true, // Mostrar las flechas de navegación
+      dots: false,
       autoplay: true, // Activar la reproducción automática
       autoplayTimeout: 5000, // Duración de cada diapositiva en milisegundos
       responsive: {
@@ -75,8 +83,8 @@ export class AppComponent implements AfterViewInit{
     jQuery('#owl-carousel1').owlCarousel({
       items: 3, // Número de elementos a mostrar
       loop: true, // Repetir el carrusel de forma infinita
-      nav: true, // Mostrar las flechas de navegación
       autoplay: true, // Activar la reproducción automática
+      dots: false,
       autoplayTimeout: 5000, // Duración de cada diapositiva en milisegundos
       responsive: {
         0: {
