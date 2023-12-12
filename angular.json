@@ -33,7 +33,8 @@
               "src/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css",
               "src/assets/css/bootstrap.min.css",
               "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/scss/bootstrap.scss"
 
               ],
               "scripts": [
